@@ -1,0 +1,32 @@
+<h1>Listing Hellos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th>Views</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for hello <- @hellos do %>
+    <tr>
+      <td><%= hello.title %></td>
+      <td><%= hello.description %></td>
+      <td><%= hello.price %></td>
+      <td><%= hello.views %></td>
+
+      <td>
+        <span><%= link "Show", to: Routes.hello_path(@conn, :show, hello) %></span>
+        <span><%= link "Edit", to: Routes.hello_path(@conn, :edit, hello) %></span>
+        <span><%= link "Delete", to: Routes.hello_path(@conn, :delete, hello), method: :delete, data: [confirm: "Are you sure?"] %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Hello", to: Routes.hello_path(@conn, :new) %></span>

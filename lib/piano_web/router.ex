@@ -19,6 +19,7 @@ defmodule PianoWeb.Router do
 
     get "/", PageController, :index
     resources "/products", ProductController
+    resources "/hellos", HelloController
   end
 
   # Other scopes may use custom stacks.

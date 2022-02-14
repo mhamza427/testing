@@ -20,4 +20,21 @@ defmodule Piano.CatalogFixtures do
 
     product
   end
+
+  @doc """
+  Generate a hello.
+  """
+  def hello_fixture(attrs \\ %{}) do
+    {:ok, hello} =
+      attrs
+      |> Enum.into(%{
+        description: "some description",
+        price: "120.5",
+        title: "some title",
+        views: 42
+      })
+      |> Piano.Catalog.create_hello()
+
+    hello
+  end
 end

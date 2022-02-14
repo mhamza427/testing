@@ -1,0 +1,28 @@
+<h1>Show Hello</h1>
+
+<ul>
+
+  <li>
+    <strong>Title:</strong>
+    <%= @hello.title %>
+  </li>
+
+  <li>
+    <strong>Description:</strong>
+    <%= @hello.description %>
+  </li>
+
+  <li>
+    <strong>Price:</strong>
+    <%= @hello.price %>
+  </li>
+
+  <li>
+    <strong>Views:</strong>
+    <%= @hello.views %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.hello_path(@conn, :edit, @hello) %></span> |
+<span><%= link "Back", to: Routes.hello_path(@conn, :index) %></span>
